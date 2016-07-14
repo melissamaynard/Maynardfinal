@@ -168,7 +168,7 @@ Chart.prototype = {
       .text(app.options.year);
 
     var countries = chart.svg.selectAll('.country')
-      .data(txData);
+      .data(txData, function (d) { return d.country;});
 
     countries.enter().append('circle')
       .attr('class', 'country')
