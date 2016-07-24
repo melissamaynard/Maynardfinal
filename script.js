@@ -1,11 +1,9 @@
-var app;
-
 // Declaring our constants
-var START_YEAR = 1950;
-var END_YEAR = 2015;
-var MAX_RADIUS = 50;
-var TRANSITION_DURATION = 750;
+chart("data.csv", "orange");
+var datearray = [];
+var colorrange = [];
 
+var app;
 
 
 // // d3.queue() enables us to load multiple data files. Following the example below, we make
