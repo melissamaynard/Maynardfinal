@@ -1,9 +1,29 @@
-// Declaring our constants
-chart("data.csv", "orange");
-var datearray = [];
-var colorrange = [];
+d3.json("data.json", function (error, data) {
+  console.log("Initial Data", data);
+
+  var labelVar = 'year'
+  var varNames = d3.keys(data[0])
+    .filter(function(key) { return key !== labelVar;});
+
+color.domain(varNames);
+
+var seriesData = varNames.map(function (name) {
+  return {
+    name: name,
+    values: data.map (function(d) {
+      return {name:name, label: d[labelVar], value: +d[name]};
+    })
+  };
+
 
 var app;
+
+// Declaring our constants
+var START_YEAR = 1950;
+var END_YEAR = 2015;
+var MAX_RADIUS = 50;
+var TRANSITION_DURATION = 750;
+
 
 
 // // d3.queue() enables us to load multiple data files. Following the example below, we make
