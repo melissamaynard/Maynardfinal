@@ -87,8 +87,9 @@ function Chart(selector) {
 
   var stack = d3.stack();
 
+  
   var area = d3.area()
-    .x(function(d, i) { return x(d.data); })
+    .x(function(d, i) { return x(d.data.date); })
     .y0(function(d) { return y(d[0]); })
     .y1(function(d) { return y(d[1]); });
 
