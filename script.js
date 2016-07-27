@@ -75,21 +75,11 @@ function Chart(selector) {
 
   // SCALES
 
-  chart.x = d3.scaleLinear()
-    .domain([0, d3.max(app.data, function (d) { return d.total_fertility; })])
-    .range([0, chart.width])
-    .nice();
+  var x = d3.scaleLinear().range([0, width]),
+    y = d3.scaleLinear().range([height, 0]),
+    z = d3.scaleOrdinal(d3.schemeCategory10);
 
-  chart.y = d3.scaleLinear()
-    .domain([0, d3.max(app.data, function (d) { return d.life_expectancy; })])
-    .range([chart.height, 0])
-    .nice();
-
-  chart.r = d3.scaleSqrt()
-    .domain([0, d3.max(app.data, function (d) { return d.population; })])
-    .range([0, MAX_RADIUS]);
-
-  chart.color = d3.scaleOrdinal(d3.schemeCategory10);
+//since time is years, left out parseDate and changed scaleTime to scaleLinear for x 
 
   // AXES
 
