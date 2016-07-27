@@ -19,13 +19,11 @@ app = {
 
     // Here we create each of the components on our page, storing them in an array
     app.components = [
-      new Chart('#chart')
     ];
 
     // Add event listeners and the like here
 
     // app.resize() will be called anytime the page size is changed
-    d3.select('window').on('resize', app.resize);
 
     
   // SVG and MARGINS
