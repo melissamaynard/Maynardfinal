@@ -82,9 +82,6 @@ function Chart(selector) {
           .range([height, 0]),
     z = d3.scaleOrdinal(d3.schemeCategory10);
 
-  //since time is years, left out parseDate and changed scaleTime to scaleLinear for x from Bostock V4 example
-//I don't think that will work because of the need to diffentiate between categories and time
-
   var stack = d3.stack();
 
   
@@ -93,33 +90,28 @@ function Chart(selector) {
     .y0(function(d) { return y(d[0]); })
     .y1(function(d) { return y(d[1]); });
 
-  //Because I'm not using date formatting, deleted .date from Bostock V4 example
+//this is specifying the coordinates for the areas
 
-  // AXES
-
-  var xAxis = d3.axisBottom()
-    .scale(chart.x);
-
-  var yAxis = d3.axisLeft()
-      .scale(chart.y);
-
+ 
   var g = svg.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+  var keys = data.columns.slice(1);
 
-  // YEAR LABEL
+  x.domain(d3.extent(data, function(d) { return d.date; }));
+  z.domain(keys);
+  stack.keys(keys);
 
-  chart.svg.append('text')
-    .attr('class', 'year')
-    .attr('x', chart.width / 2)
-    .attr('y', chart.height / 2)
-    .attr('dy', '.35em')
-    .style('text-anchor', 'middle')
-    .style('font-size', '230px')
-    .style('font-weight', 'bold')
-    .style('opacity', 0.2)
-    .text(app.options.year);
+  var layer = g.selectAll(".layer")
+    .data(stack(data))
+    .enter().append("g")
+      .attr("class", "layer");
 
+  layer.append("path")
+      .attr("class", "area")
+      .style("fill", function(d) { return z(d.key); })
+      .attr("d", area);
+  
   chart.update();
 }
 
