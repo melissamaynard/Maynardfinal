@@ -111,6 +111,15 @@ function Chart(selector) {
       .attr("class", "area")
       .style("fill", function(d) { return z(d.key); })
       .attr("d", area);
+      
+  layer.filter(function(d) { return d[d.length - 1][1] - d[d.length - 1][0] > 0.01; })
+    .append("text")
+      .attr("x", width - 6)
+      .attr("y", function(d) { return y((d[d.length - 1][0] + d[d.length - 1][1]) / 2); })
+      .attr("dy", ".35em")
+      .style("font", "10px sans-serif")
+      .style("text-anchor", "end")
+      .text(function(d) { return d.key; });
   
   chart.update();
 }
