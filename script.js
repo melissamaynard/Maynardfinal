@@ -27,11 +27,21 @@ app = {
 
     
   // SVG and MARGINS
+  var chart = this;
 
-  var svg = d3.select("svg"),
-    margin = {top: 20, right: 20, bottom: 30, left: 50},
-    width = svg.attr("width") - margin.left - margin.right,
-    height = svg.attr("height") - margin.top - margin.bottom;
+  var margin = {
+    top: 20, right: 20, bottom: 30, left: 50
+  };
+
+  chart.width = 600 - margin.left - margin.right;
+  chart.height = 400 - margin.top - margin.bottom;
+
+  chart.svg = d3.select(chart)
+    .append('svg')
+    .attr('width', chart.width + margin.left + margin.right)
+    .attr('height', chart.height + margin.top + margin.bottom)
+    .append('g')
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
   var parseDate = d3.timeParse("%Y");
 
