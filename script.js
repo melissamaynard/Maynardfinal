@@ -94,7 +94,7 @@ app = {
  g.append("g")
       .attr("class", "axis axis--y")
       .call(d3.axisLeft(y).ticks(10, "%"));
-
+}}
 //there used to be an extra parentheses in line above }); but sublime was flagging as error
 
 function type(d, i, columns) {
