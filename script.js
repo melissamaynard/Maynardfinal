@@ -72,14 +72,18 @@ function Chart(selector) {
     width = svg.attr("width") - margin.left - margin.right,
     height = svg.attr("height") - margin.top - margin.bottom;
 
+  var parseDate = d3.timeParse("%Y");
 
   // SCALES
 
-  var x = d3.scaleLinear().range([0, width]),
-    y = d3.scaleLinear().range([height, 0]),
+  var x = d3.scaleTime()
+          .range([0, width]),
+    y = d3.scaleLinear()
+          .range([height, 0]),
     z = d3.scaleOrdinal(d3.schemeCategory10);
 
   //since time is years, left out parseDate and changed scaleTime to scaleLinear for x from Bostock V4 example
+//I don't think that will work because of the need to diffentiate between categories and time
 
   var stack = d3.stack();
 
@@ -98,30 +102,9 @@ function Chart(selector) {
   var yAxis = d3.axisLeft()
       .scale(chart.y);
 
-  chart.svg.append('g')
-    .attr('class', 'x axis')
-    .attr('transform', 'translate(0,' + chart.height + ')')
-    .call(xAxis)
-    .append('text')
-    .attr('y', 30)
-    .attr('x', chart.width)
-    .style('text-anchor', 'end')
-    .style('fill', '#000')
-    .style('font-weight', 'bold')
-    .text('Fertility (births per woman)');
+  var g = svg.append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  chart.svg.append('g')
-    .attr('class', 'y axis')
-    .call(yAxis)
-    .append('text')
-    .attr('transform', 'rotate(-90)')
-    .attr('dy', '.71em')
-    .attr('y', -35)
-    .attr('x', 0)
-    .style('text-anchor', 'end')
-    .style('fill', '#000')
-    .style('font-weight', 'bold')
-    .text('Life expectancy (years)');
 
   // YEAR LABEL
 
