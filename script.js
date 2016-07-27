@@ -79,7 +79,16 @@ function Chart(selector) {
     y = d3.scaleLinear().range([height, 0]),
     z = d3.scaleOrdinal(d3.schemeCategory10);
 
-//since time is years, left out parseDate and changed scaleTime to scaleLinear for x 
+  //since time is years, left out parseDate and changed scaleTime to scaleLinear for x from Bostock V4 example
+
+  var stack = d3.stack();
+
+  var area = d3.area()
+    .x(function(d, i) { return x(d.data); })
+    .y0(function(d) { return y(d[0]); })
+    .y1(function(d) { return y(d[1]); });
+
+  //Because I'm not using date formatting, deleted .date from Bostock V4 example
 
   // AXES
 
