@@ -1,13 +1,5 @@
 var app;
 
-// Declaring our constants
-var START_YEAR = 1950;
-var END_YEAR = 2015;
-var MAX_RADIUS = 50;
-var TRANSITION_DURATION = 750;
-
-
-
 // // d3.queue() enables us to load multiple data files. Following the example below, we make
 // // additional .defer() calls with additional data files, and they are returned as results[1],
 // // results[2], etc., once they have all finished downloading.
@@ -22,11 +14,7 @@ app = {
   data: [],
   components: [],
 
-  options: {
-    year: START_YEAR
-  },
-
-  initialize: function (data) {
+    initialize: function (data) {
     app.data = data;
 
     // Here we create each of the components on our page, storing them in an array
@@ -39,32 +27,7 @@ app = {
     // app.resize() will be called anytime the page size is changed
     d3.select('window').on('resize', app.resize);
 
-    // For demo purposes, let's tick the year every 750ms
-    function incrementYear() {
-      app.options.year += 1;
-      if (app.options.year > END_YEAR) {
-        app.options.year = START_YEAR;
-      }
-
-      app.update();
-    }
-      
-      d3.interval(incrementYear, TRANSITION_DURATION);
-    // d3.interval(incrementYear, TRANSITION_DURATION);
-  },
-
-  resize: function () {
-    app.components.forEach(function (c) { if (c.resize) { c.resize(); }});
-  },
-
-  update: function () {
-    app.components.forEach(function (c) { if (c.update) { c.update(); }});
-  }
-}
-
-function Chart(selector) {
-  var chart = this;
-
+    
   // SVG and MARGINS
 
   var svg = d3.select("svg"),
@@ -111,7 +74,7 @@ function Chart(selector) {
       .attr("class", "area")
       .style("fill", function(d) { return z(d.key); })
       .attr("d", area);
-      
+
   layer.filter(function(d) { return d[d.length - 1][1] - d[d.length - 1][0] > 0.01; })
     .append("text")
       .attr("x", width - 6)
@@ -120,46 +83,22 @@ function Chart(selector) {
       .style("font", "10px sans-serif")
       .style("text-anchor", "end")
       .text(function(d) { return d.key; });
-  
-  chart.update();
-}
 
-Chart.prototype = {
-  update: function () {
-    var chart = this;
+//Axes  
 
-    // TRANSFORM DATA
+    g.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
 
-    var txData = app.data.filter(function (d) { return d.year === app.options.year; });
+  g.append("g")
+      .attr("class", "axis axis--y")
+      .call(d3.axisLeft(y).ticks(10, "%"));
+};
+//there used to be an extra parentheses in line above }); but sublime was flagging as error
 
-    // UPDATE CHART ELEMENTS
-
-    var t = d3.transition().duration(TRANSITION_DURATION);
-
-    var yearText = d3.selectAll('.year')
-      .transition().delay(TRANSITION_DURATION / 2)
-      .text(app.options.year);
-
-    var countries = chart.svg.selectAll('.country')
-      .data(txData, function (d) { return d.country;});
-
-    countries.enter().append('circle')
-      .attr('class', 'country')
-      .style('fill', function (d) { return chart.color(d.continent); })
-      .style('opacity', 0.75)
-      .attr('r', 0)
-      .attr('cx', chart.width / 2)
-      .attr('cy', chart.height / 2)
-      .merge(countries)
-      .sort(function (a, b) { return b.population - a.population; })
-      .transition(t)
-      .attr('r', function (d) { return chart.r(d.population); })
-      .attr('cx', function (d) { return chart.x(d.total_fertility); })
-      .attr('cy', function (d) { return chart.y(d.life_expectancy); });
-
-    countries.exit()
-      .transition(t)
-      .attr('r', 0)
-      .remove();
-  }
+function type(d, i, columns) {
+  d.date = parseDate(d.date);
+  for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = d[columns[i]] / 100;
+  return d;
 }
