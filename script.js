@@ -91,10 +91,10 @@ app = {
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x));
 
-  g.append("g")
+ g.append("g")
       .attr("class", "axis axis--y")
       .call(d3.axisLeft(y).ticks(10, "%"));
-};
+
 //there used to be an extra parentheses in line above }); but sublime was flagging as error
 
 function type(d, i, columns) {
@@ -102,3 +102,4 @@ function type(d, i, columns) {
   for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = d[columns[i]] / 100;
   return d;
 }
+
