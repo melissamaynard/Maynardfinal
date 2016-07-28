@@ -36,7 +36,7 @@ app = {
   chart.width = 600 - margin.left - margin.right;
   chart.height = 400 - margin.top - margin.bottom;
 
-  chart.svg = d3.select(chart)
+  chart.svg = d3.select("#chart")
     .append('svg')
     .attr('width', chart.width + margin.left + margin.right)
     .attr('height', chart.height + margin.top + margin.bottom)
