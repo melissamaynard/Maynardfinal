@@ -27,6 +27,8 @@ app = {
 
     
   // SVG and MARGINS
+function Chart(selector) {
+
   var chart = this;
 
   var margin = {
@@ -48,9 +50,9 @@ app = {
   // SCALES
 
   var x = d3.scaleTime()
-          .range([0, width]),
+          .range([0, chart.width]),
     y = d3.scaleLinear()
-          .range([height, 0]),
+          .range([chart.height, 0]),
     z = d3.scaleOrdinal(d3.schemeCategory10);
 
   var stack = d3.stack();
