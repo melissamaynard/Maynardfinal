@@ -38,3 +38,10 @@
           veggiesArr.push(series[name]);
         });
         //setting up array of objects for each vegetable category
+
+        data.forEach(function (d) {
+          varNames.map(function (name) {
+            veggies[name].values.push({label: d[labelVar], value: +d[name]});
+          });
+        });
+        //filling in values needed for each category of vegetables
