@@ -47,3 +47,10 @@
         //filling in values needed for each category of vegetables
         x.domain(data.map(function (d) { return d.year; }));
         //establishing domain for x
+        stack(veggiessArr);
+        console.log("stacked veggiesArr", veggiesArr);
+
+        y.domain([0, d3.max(veggiesArr, function (c) { 
+            return d3.max(c.values, function (d) { return d.y0 + d.y; });
+          })]);
+        //establish y domain, send data to stack
