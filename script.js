@@ -45,3 +45,5 @@
           });
         });
         //filling in values needed for each category of vegetables
+        x.domain(data.map(function (d) { return d.year; }));
+        //establishing domain for x
