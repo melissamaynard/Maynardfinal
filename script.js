@@ -32,3 +32,9 @@
         //create an array of variable names
         color.domain(varNames);
         //set varnames array as domain for color scale
+        var veggiesArr = [], veggies = {};
+        varNames.forEach(function (name) {
+          veggies[name] = {name: name, values:[]};
+          veggiesArr.push(series[name]);
+        });
+        //setting up array of objects for each vegetable category
