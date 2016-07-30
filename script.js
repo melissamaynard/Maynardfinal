@@ -27,3 +27,8 @@
 
         var labelVar = 'year';
         //identifying year as the time element/categorical variable
+        var varNames = d3.keys(data[0])
+            .filter(function (key) { return key !== labelVar;});
+        //create an array of variable names
+        color.domain(varNames);
+        //set varnames array as domain for color scale
