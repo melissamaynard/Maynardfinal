@@ -54,3 +54,16 @@
             return d3.max(c.values, function (d) { return d.y0 + d.y; });
           })]);
         //establish y domain, send data to stack
+        var selection = svg.selectAll(".veggies")
+          .data(veggiesArr)
+          .enter().append("g")
+            .attr("class", "veggies");
+
+        selection.append("path")
+          .attr("class", "streamPath")
+          .attr("d", function (d) { return area(d.values); })
+          .style("fill", function (d) { return color(d.name); })
+          .style("stroke", "grey");
+
+         });
+        //append a g element for each category of vegetables, append path
