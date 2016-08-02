@@ -20,6 +20,9 @@
           .y0(function (d) { return y(d.y0); })
           .y1(function (d) { return y(d.y0 + d.y); });
 
+      var color = d3.scale.ordinal()
+          .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c"]);
+
       //a tutorial I'm trying to follow (http://www.delimited.io/blog/2014/3/3/creating-multi-series-charts-in-d3-lines-bars-area-and-streamgraphs) glazes over the above code as "declaring variables," so not sure what to do other than start with it. From the rest of the code, it appears that nothing in it is specific to the data set used in the tutorial.
 
       d3.csv("data/veggies.csv", function (error, data) {
@@ -35,7 +38,7 @@
         var veggiesArr = [], veggies = {};
         varNames.forEach(function (name) {
           veggies[name] = {name: name, values:[]};
-          veggiesArr.push(series[name]);
+          veggiesArr.push(veggies[name]);
         });
         //setting up array of objects for each vegetable category
 
@@ -47,7 +50,7 @@
         //filling in values needed for each category of vegetables
         x.domain(data.map(function (d) { return d.year; }));
         //establishing domain for x
-        stack(veggiessArr);
+        stack(veggiesArr);
         console.log("stacked veggiesArr", veggiesArr);
 
         y.domain([0, d3.max(veggiesArr, function (c) { 
