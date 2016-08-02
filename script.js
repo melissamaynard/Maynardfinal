@@ -8,6 +8,14 @@
       var y = d3.scale.linear()
           .rangeRound([height, 0]);
 
+      var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom");
+
+      var yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left");
+
       var stack = d3.layout.stack()
           .offset("wiggle")
           .values(function (d) { return d.values; })
@@ -63,6 +71,21 @@
             return d3.max(c.values, function (d) { return d.y0 + d.y; });
           })]);
         //establish y domain, send data to stack
+
+        svg.append("g")
+          .attr("class", "x axis")
+          .attr("transform", "translate(0," + height + ")")
+          .call(xAxis);
+
+        svg.append("g")
+          .attr("class", "y axis")
+          .call(yAxis)
+        .append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", 6)
+          .attr("dy", ".71em")
+          .style("text-anchor", "end")
+          .text("Daily average consumption of vegetables in cups");
         var selection = svg.selectAll(".veggies")
           .data(veggiesArr)
           .enter().append("g")
