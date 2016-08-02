@@ -23,6 +23,12 @@
       var color = d3.scale.ordinal()
           .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c"]);
 
+      var svg = d3.select("body").append("svg")
+          .attr("width",  width  + margin.left + margin.right)
+          .attr("height", height + margin.top  + margin.bottom)
+        .append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
       //a tutorial I'm trying to follow (http://www.delimited.io/blog/2014/3/3/creating-multi-series-charts-in-d3-lines-bars-area-and-streamgraphs) glazes over the above code as "declaring variables," so not sure what to do other than start with it. From the rest of the code, it appears that nothing in it is specific to the data set used in the tutorial.
 
       d3.csv("data/veggies.csv", function (error, data) {
