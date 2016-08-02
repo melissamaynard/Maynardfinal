@@ -21,8 +21,7 @@
           .y1(function (d) { return y(d.y0 + d.y); });
 
       var color = d3.scale.ordinal()
-          .range(["#edf8e9", "#c7e9c0", "#a1d99b", "#74c476", "#41ab5d", "#238b45", 
-            "#005a32"]);
+          .range(["#74c476", "#41ab5d", "#238b45", "#edf8e9", "#c7e9c0", "#a1d99b", "#005a32", "D1160C", "FF9339", "FF9332", "FCCD00", "BDAFA4", "FFE132", "869760", "A7B38D", "647936", "191518"]);
 
       var svg = d3.select("body").append("svg")
           .attr("width",  width  + margin.left + margin.right)
