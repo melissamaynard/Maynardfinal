@@ -1,3 +1,83 @@
+ d3.queue()
+  .defer(d3.csv, 'data/veggies.csv')
+  .defer(d3.csv, 'data/meat.csv')
+  .defer(d3.csv, 'data/dailry.csv')
+  .defer(d3.csv, 'data/fruit.csv')
+  .defer(d3.csv, 'data/grains.csv')
+  .defer(d3.csv, 'data/fats.csv')
+  .defer(d3.csv, 'data/nuts.csv')
+  .defer(d3.csv, 'data/sugar.csv')
+
+  .awaitAll(function (error, results) {
+    if (error) { throw error; }
+    
+    veg = new streamPath(results[0]);
+    stream.update(results[0]);
+
+    meat = new streamPath(results[1]);
+    stream.update(results[1]);
+
+    dairy = new streamPath(results[2]);
+    stream.update(results[2]);
+
+    fruit = new streamPath(results[3]);
+    stream.update(results[3]);
+
+    grains = new streamPath(results[4]);
+    stream.update(results[4]);
+
+    fats = new streamPath(results[5]);
+    stream.update(results[5]);
+
+    nuts = new streamPath(results[6]);
+    stream.update(results[6]);
+
+    sugar = new streamPath(results[7]);
+    stream.update(results[7]);
+
+
+    d3.select('#vegetables').on('click', function () {
+
+        stream.update(results[0]);
+
+
+    d3.select('#meat').on('click', function () {
+
+        stream.update(results[1]);
+
+
+    d3.select('#dairy').on('click', function () {
+
+        stream.update(results[2]);
+
+
+    d3.select('#fruit').on('click', function () {
+
+        stream.update(results[3]);
+
+
+    d3.select('#grains').on('click', function () {
+
+        stream.update(results[4]);
+
+    d3.select('#fats').on('click', function () {
+
+        stream.update(results[5]);
+
+
+    d3.select('#nuts').on('click', function () {
+
+        stream.update(results[6]);
+
+    d3.select('#sugar').on('click', function () {
+
+        stream.update(results[7]);
+
+
+    });
+  });
+
+
  var margin = {top: 20, right: 55, bottom: 30, left: 40},
           width  = 1000 - margin.left - margin.right,
           height = 500  - margin.top  - margin.bottom;
