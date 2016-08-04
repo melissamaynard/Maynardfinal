@@ -11,29 +11,29 @@
   .awaitAll(function (error, results) {
     if (error) { throw error; }
     
-    veg = new streamPath(results[0]);
+    stream = new streamPath();
     stream.update(results[0]);
 
-    meat = new streamPath(results[1]);
-    stream.update(results[1]);
+    // meat = new streamPath(results[1]);
+    // stream.update(results[1]);
 
-    dairy = new streamPath(results[2]);
-    stream.update(results[2]);
+    // dairy = new streamPath(results[2]);
+    // stream.update(results[2]);
 
-    fruit = new streamPath(results[3]);
-    stream.update(results[3]);
+    // fruit = new streamPath(results[3]);
+    // stream.update(results[3]);
 
-    grains = new streamPath(results[4]);
-    stream.update(results[4]);
+    // grains = new streamPath(results[4]);
+    // stream.update(results[4]);
 
-    fats = new streamPath(results[5]);
-    stream.update(results[5]);
+    // fats = new streamPath(results[5]);
+    // stream.update(results[5]);
 
-    nuts = new streamPath(results[6]);
-    stream.update(results[6]);
+    // nuts = new streamPath(results[6]);
+    // stream.update(results[6]);
 
-    sugar = new streamPath(results[7]);
-    stream.update(results[7]);
+    // sugar = new streamPath(results[7]);
+    // stream.update(results[7]);
 
 
     d3.select('#vegetables').on('click', function () {
