@@ -78,40 +78,47 @@
   });
 
 
+
+
  var margin = {top: 20, right: 55, bottom: 30, left: 40},
           width  = 1000 - margin.left - margin.right,
           height = 500  - margin.top  - margin.bottom;
 
-      var x = d3.scale.ordinal()
+
+ function streamPath(data) {
+    
+    var chart = this;
+      
+          x = d3.scale.ordinal()
           .rangeRoundBands([0, width], .1);
 
-      var y = d3.scale.linear()
+          y = d3.scale.linear()
           .rangeRound([height, 0]);
 
-      var xAxis = d3.svg.axis()
+         xAxis = d3.svg.axis()
         .scale(x)
         .orient("bottom");
 
-      var yAxis = d3.svg.axis()
+         yAxis = d3.svg.axis()
         .scale(y)
         .orient("left");
 
-      var stack = d3.layout.stack()
+         stack = d3.layout.stack()
           .offset("wiggle")
           .values(function (d) { return d.values; })
           .x(function (d) { return x(d.label) + x.rangeBand() / 2; })
           .y(function (d) { return d.value; });
 
-      var area = d3.svg.area()
+          area = d3.svg.area()
           .interpolate("cardinal")
           .x(function (d) { return x(d.label) + x.rangeBand() / 2; })
           .y0(function (d) { return y(d.y0); })
           .y1(function (d) { return y(d.y0 + d.y); });
 
-      var color = d3.scale.ordinal()
+          color = d3.scale.ordinal()
           .range(["#74c476", "#41ab5d", "#238b45", "#edf8e9", "#c7e9c0", "#a1d99b", "#005a32", "D1160C", "FF9339", "FF9332", "FCCD00", "BDAFA4", "FFE132", "869760", "A7B38D", "647936", "191518"]);
 
-      var svg = d3.select("body").append("svg")
+          svg = d3.select("body").append("svg")
           .attr("width",  width  + margin.left + margin.right)
           .attr("height", height + margin.top  + margin.bottom)
         .append("g")
