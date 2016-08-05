@@ -89,44 +89,50 @@
     
     var chart = this;
       
-          x = d3.scale.ordinal()
+      var x = d3.scale.ordinal()
           .rangeRoundBands([0, width], .1);
 
-          y = d3.scale.linear()
+      var y = d3.scale.linear()
           .rangeRound([height, 0]);
 
-         xAxis = d3.svg.axis()
+      var xAxis = d3.svg.axis()
         .scale(x)
         .orient("bottom");
 
-         yAxis = d3.svg.axis()
+      var yAxis = d3.svg.axis()
         .scale(y)
         .orient("left");
 
-         stack = d3.layout.stack()
+      var stack = d3.layout.stack()
           .offset("wiggle")
           .values(function (d) { return d.values; })
           .x(function (d) { return x(d.label) + x.rangeBand() / 2; })
           .y(function (d) { return d.value; });
 
-          area = d3.svg.area()
+      var area = d3.svg.area()
           .interpolate("cardinal")
           .x(function (d) { return x(d.label) + x.rangeBand() / 2; })
           .y0(function (d) { return y(d.y0); })
           .y1(function (d) { return y(d.y0 + d.y); });
 
-          color = d3.scale.ordinal()
+      var color = d3.scale.ordinal()
           .range(["#74c476", "#41ab5d", "#238b45", "#edf8e9", "#c7e9c0", "#a1d99b", "#005a32", "D1160C", "FF9339", "FF9332", "FCCD00", "BDAFA4", "FFE132", "869760", "A7B38D", "647936", "191518"]);
 
-          svg = d3.select("body").append("svg")
+      var svg = d3.select("body").append("svg")
           .attr("width",  width  + margin.left + margin.right)
           .attr("height", height + margin.top  + margin.bottom)
         .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+        }
+
       //a tutorial I'm trying to follow (http://www.delimited.io/blog/2014/3/3/creating-multi-series-charts-in-d3-lines-bars-area-and-streamgraphs) glazes over the above code as "declaring variables," so not sure what to do other than start with it. From the rest of the code, it appears that nothing in it is specific to the data set used in the tutorial.
 
-      d3.csv("data/veggies.csv", function (error, data) {
+      stream.prototype.update = function (data) {
+
+        var chart = this;
+
+        d3.csv("data/veggies.csv", function (error, data) {
         console.log("initial data", data);
 
         var labelVar = 'year';
