@@ -89,10 +89,10 @@
     
     var chart = this;
       
-      var x = d3.scale.ordinal()
+      chart.x = d3.scale.ordinal()
           .rangeRoundBands([0, width], .1);
 
-      var y = d3.scale.linear()
+      chart.y = d3.scale.linear()
           .rangeRound([height, 0]);
 
       var xAxis = d3.svg.axis()
@@ -103,13 +103,13 @@
         .scale(y)
         .orient("left");
 
-      var stack = d3.layout.stack()
+      chart.stack = d3.layout.stack()
           .offset("wiggle")
           .values(function (d) { return d.values; })
           .x(function (d) { return x(d.label) + x.rangeBand() / 2; })
           .y(function (d) { return d.value; });
 
-      var area = d3.svg.area()
+      chart.area = d3.svg.area()
           .interpolate("cardinal")
           .x(function (d) { return x(d.label) + x.rangeBand() / 2; })
           .y0(function (d) { return y(d.y0); })
@@ -118,7 +118,7 @@
       var color = d3.scale.ordinal()
           .range(["#74c476", "#41ab5d", "#238b45", "#edf8e9", "#c7e9c0", "#a1d99b", "#005a32", "D1160C", "FF9339", "FF9332", "FCCD00", "BDAFA4", "FFE132", "869760", "A7B38D", "647936", "191518"]);
 
-      var svg = d3.select("body").append("svg")
+      chart.svg = d3.select("body").append("svg")
           .attr("width",  width  + margin.left + margin.right)
           .attr("height", height + margin.top  + margin.bottom)
         .append("g")
@@ -135,12 +135,12 @@
         d3.csv("data/veggies.csv", function (error, data) {
         console.log("initial data", data);
 
-        var labelVar = 'year';
+        chart.labelVar = 'year';
         //identifying year as the time element/categorical variable
-        var varNames = d3.keys(data[0])
+        chart.varNames = d3.keys(data[0])
             .filter(function (key) { return key !== labelVar;});
         //create an array of variable names
-        color.domain(varNames);
+        chart.color.domain(varNames);
         //set varnames array as domain for color scale
         var veggiesArr = [], veggies = {};
         varNames.forEach(function (name) {
@@ -179,18 +179,18 @@
           .attr("dy", ".71em")
           .style("text-anchor", "end")
           .text("Daily average consumption of vegetables in cups");
-        var selection = svg.selectAll(".veggies")
+        chart.selection = svg.selectAll(".veggies")
           .data(veggiesArr)
           .enter().append("g")
             .attr("class", "veggies");
 
-        selection.append("path")
+        chart.selection.append("path")
           .attr("class", "streamPath")
           .attr("d", function (d) { return area(d.values); })
           .style("fill", function (d) { return color(d.name); })
           .style("stroke", "grey");
 
-        var legend = svg.selectAll(".legend")
+        chart.legend = svg.selectAll(".legend")
             .data(varNames.slice().reverse())
           .enter().append("g")
             .attr("class", "legend")
