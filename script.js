@@ -142,35 +142,35 @@
         //create an array of variable names
         chart.color.domain(varNames);
         //set varnames array as domain for color scale
-        var veggiesArr = [], veggies = {};
+        chart.veggiesArr = [], veggies = {};
         varNames.forEach(function (name) {
           veggies[name] = {name: name, values:[]};
           veggiesArr.push(veggies[name]);
         });
         //setting up array of objects for each vegetable category
 
-        data.forEach(function (d) {
+        chart.data.forEach(function (d) {
           varNames.map(function (name) {
             veggies[name].values.push({label: d[labelVar], value: +d[name]});
           });
         });
         //filling in values needed for each category of vegetables
-        x.domain(data.map(function (d) { return d.year; }));
+        chart.x.domain(data.map(function (d) { return d.year; }));
         //establishing domain for x
         stack(veggiesArr);
         console.log("stacked veggiesArr", veggiesArr);
 
-        y.domain([0, d3.max(veggiesArr, function (c) { 
+        chart.y.domain([0, d3.max(veggiesArr, function (c) { 
             return d3.max(c.values, function (d) { return d.y0 + d.y; });
           })]);
         //establish y domain, send data to stack
 
-        svg.append("g")
+        chart.svg.append("g")
           .attr("class", "x axis")
           .attr("transform", "translate(0," + height + ")")
           .call(xAxis);
 
-        svg.append("g")
+        chart.svg.append("g")
           .attr("class", "y axis")
           .call(yAxis)
         .append("text")
@@ -198,14 +198,14 @@
               return "translate(55," + i * 20 + ")"; 
             });
 
-        legend.append("rect")
+        chart.legend.append("rect")
             .attr("x", width - 10)
             .attr("width", 10)
             .attr("height", 10)
             .style("fill", color)
             .style("stroke", "grey");
 
-        legend.append("text")
+        chart.legend.append("text")
             .attr("x", width - 12)
             .attr("y", 6)
             .attr("dy", ".35em")
