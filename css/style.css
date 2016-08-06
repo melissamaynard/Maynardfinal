@@ -174,4 +174,75 @@ text {
   .inset {
     padding: 15px;
   }
+
+  .escaroleromaineandleaflettuce {
+    fill: #74c476;
+  }
+
+  .broccoli {
+    fill: #41ab5d;
+  }
+
+   .spinach {
+    fill: #238b45;
+  }
+  
+   .collardgreens {
+    fill: #edf8e9;
+  }
+  
+   .kale {
+    fill: #c7e9c0;
+  }
+  
+   .mustardgreens {
+    fill: #a1d99b;
+  }
+  
+   .turnipgreens {
+    fill: #005a32;
+  }
+  
+  .tomatoes { 
+    fill: #D1160C; 
+  }
+
+ .carrots {
+    fill: #FF9339;
+  }
+  
+  .pumpkins {
+    fill: #FF9332;
+  }
+  
+  
+  .sweetpotatoes { 
+    fill: #FCCD00 ; 
+  }
+
+  .potatoes {
+    fill: #BDAFA4;
+  }
+  
+   .corn {
+    fill: #FFE132;
+  }
+  
+   .limabeans {
+    fill: #869760;
+  }
+  
+   .drybeans {
+    fill: #A7B38D;
+  }
+  
+   .drypeasandlentils {
+    fill: #647936;
+  }
+  
+   .othervegetables {
+    fill: #191518;
+  }
+  
+  
 }
