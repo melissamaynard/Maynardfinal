@@ -117,7 +117,7 @@ Stream.prototype.update = function (foodType) {
             .attr("x", width - 10)
             .attr("width", 10)
             .attr("height", 10)
-            .style("fill", color)
+            .style("fill", chart.color)
             .style("stroke", "grey");
 
         chart.legend.append("text")
