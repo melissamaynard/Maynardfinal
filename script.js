@@ -102,7 +102,7 @@ Stream.prototype.update = function (foodType) {
         chart.selection.append("path")
           .attr("class", "streamPath")
           .attr("d", function (d) { return chart.area(d.values); })
-          .style("fill", function (d) { return chart.color(d.name); })
+          .classed(d.name, true)
           .style("stroke", "grey");
 
         chart.legend = chart.svg.selectAll(".legend")
@@ -117,7 +117,7 @@ Stream.prototype.update = function (foodType) {
             .attr("x", width - 10)
             .attr("width", 10)
             .attr("height", 10)
-            .style("fill", chart.color)
+            .classed(d.name, true)
             .style("stroke", "grey");
 
         chart.legend.append("text")
