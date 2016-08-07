@@ -470,4 +470,28 @@ text {
    .barleyproducts {
     fill: #BDBA7E;
   }
+
+    .beef {
+    fill: #58563D;
+  }
+
+   .veal {
+    fill: #7A7742;
+  }
+  
+   .pork {
+    fill: #FFE9DA;
+  }
+
+  .lamb {
+    fill: #FFFAF7;
+  }
+  
+   .chicken {
+    fill: #FFEEC5;
+  }
+  
+   .turkey {
+    fill: #FFDCBD;
+  }
 }
