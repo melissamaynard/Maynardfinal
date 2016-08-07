@@ -285,8 +285,6 @@ text {
     fill: #A59B77;
   }
   
-  butter,margarine,lard,edible beef tallow,shortening,salad and cooking oils,other edible fats and oils,light cream,sour cream,cream cheese,eggnog
-
    .butter {
     fill: #FEF38B;
   }
@@ -331,5 +329,124 @@ text {
    .eggnog {
     fill: #D2C76A;
   }
+
+  .oranges {
+    fill: #FFE100;
+  }
+  
+   .tangerines {
+    fill: #EBA944;
+  }
+  
+   .grapefruit {
+    fill: #FFF5AE;
+  }
+
+   .lemons {
+    fill: #FFFF00;
+  }
+  
+   .limes {
+    fill: #B7F300;
+  }
+
+  .apples {
+    fill: #621300;
+  }
+
+  .apricots {
+    fill: #FF9F00;
+  }
+  
+   .avocados {
+    fill: #8DA336;
+  }
+  
+   .bananas {
+    fill: #FFF674;
+  }
+
+   .blueberries {
+    fill: #1F195C;
+  }
+  
+   .cantaloupe {
+    fill: #FFDF45;
+  }
+
+  .cherries {
+    fill: #6F0407;
+  }
+  
+   .cranberries {
+    fill: #5D191B;
+  }
+  
+   .grapes {
+    fill: #640A50;
+  }
+
+   .honeydewmelons {
+    fill: #CBEF83;
+  }
+  
+   
+  .kiwi {
+    fill: #87CB00;
+  }
+  
+   .mangoes {
+    fill: #EDC400;
+  }
+  
+  .peaches {
+    fill: #FFBA4D;
+  }
+
+   .pears {
+    fill: #DBF94B;
+  }
+
+   .pineapple {
+    fill: #FFFF4D;
+  }
+  
+   .papayas {
+    fill: #FAAA11;
+  }
+
+  .plums {
+    fill: #7B075E;
+  }
+  
+   .raspberry {
+    fill: #EA0C00;
+  }
+  
+   .strawberries {
+    fill: #9F0800;
+  }
+
+   .watermelon {
+    fill: #F8001D;
+  }
+  
+   .canned {
+    fill: #8C797B;
+  }
+
+  .frozen {
+    fill: #68AA98;
+  }
+  
+   .dried {
+    fill: #AD8246;
+  }
+  
+   .juice {
+    fill: #FFD300;
+  }
+
+  
 
 }
