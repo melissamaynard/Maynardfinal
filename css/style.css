@@ -542,6 +542,21 @@ text {
    .curedseafood {
     fill: #FFFEFE;
   }
+  
+    .caneandbeetsugar {
+    fill: #FFFFFF;
+  }
 
+   .cornsweetener {
+    fill: #FFEF60;
+  }
+  
+   .syrup {
+    fill: #967621;
+  }
+  
+   .honey {
+    fill: #DA9F00;
+  }
 
 }
