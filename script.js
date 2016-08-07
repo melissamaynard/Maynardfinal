@@ -2,6 +2,19 @@ var margin = { top: 20, right: 55, bottom: 30, left: 40 },
     width  = 1000 - margin.left - margin.right,
     height = 500  - margin.top  - margin.bottom;
 
+var labels = {
+    veggies: 'Daily average consumption of vegetables in cups',
+    meat: 'Daily average consumption of meat and eggs in ounces',
+    dairy: 'Daily average consumption of dairy and in cups',
+    fats: 'Daily average consumption of fats in grams'
+    grains: 'Daily average consumption of grains in ounces'
+    nuts: 'Daily average consumption of nuts in ounces'
+    seafood: 'Daily average consumption of seafood in ounces'
+    sugar: 'Daily average consumption of sugars in teaspoons'
+    fruit: 'Daily average consumption of fruit in cups'
+
+} 
+
 function Stream(data) {
     var chart = this;
 
