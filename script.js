@@ -6,11 +6,11 @@ var labels = {
     veggies: 'Daily average consumption of vegetables in cups',
     meat: 'Daily average consumption of meat and eggs in ounces',
     dairy: 'Daily average consumption of dairy and in cups',
-    fats: 'Daily average consumption of fats in grams'
-    grains: 'Daily average consumption of grains in ounces'
-    nuts: 'Daily average consumption of nuts in ounces'
-    seafood: 'Daily average consumption of seafood in ounces'
-    sugar: 'Daily average consumption of sugars in teaspoons'
+    fats: 'Daily average consumption of fats in grams',
+    grains: 'Daily average consumption of grains in ounces',
+    nuts: 'Daily average consumption of nuts in ounces',
+    seafood: 'Daily average consumption of seafood in ounces',
+    sugar: 'Daily average consumption of sugars in teaspoons',
     fruit: 'Daily average consumption of fruit in cups'
 
 } 
@@ -106,7 +106,7 @@ Stream.prototype.update = function (foodType) {
           .attr("y", 6)
           .attr("dy", ".71em")
           .style("text-anchor", "end")
-          .text("Daily average consumption of vegetables in cups");
+          .text(labels[foodType]);
         chart.selection = chart.svg.selectAll(".veggies")
           .data(veggiesArr)
           .enter().append("g")
