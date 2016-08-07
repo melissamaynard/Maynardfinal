@@ -447,6 +447,27 @@ text {
     fill: #FFD300;
   }
 
-  
+   .wheatflour {
+    fill: #36311A;
+  }
 
+   .ryeflour {
+    fill: #6D622E;
+  }
+  
+   .rice {
+    fill: #ADA683;
+  }
+
+  .cornproducts {
+    fill: #E1D72D;
+  }
+  
+   .oatproducts {
+    fill: #676649;
+  }
+  
+   .barleyproducts {
+    fill: #BDBA7E;
+  }
 }
