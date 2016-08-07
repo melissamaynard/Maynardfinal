@@ -495,8 +495,6 @@ text {
     fill: #FFDCBD;
   }
 
-  peanuts,almonds,hazelnuts,pecans,walnuts,macadamia,pistacios,othernuts,coconuts
-
     .peanuts {
     fill: #FFC46E;
   }
@@ -532,5 +530,18 @@ text {
    .coconuts {
     fill: #F1F1F1;
   }
+
+   .freshandfrozenseafood {
+    fill: #F5987F;
+  }
+  
+   .cannedseafood {
+    fill: #645552;
+  }
+  
+   .curedseafood {
+    fill: #FFFEFE;
+  }
+
 
 }
