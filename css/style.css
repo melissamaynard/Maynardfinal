@@ -245,4 +245,47 @@ text {
   }
   
   
+yogurt,fluid milk,american cheese,italian cheese,miscellaneous cheese,frozen dairy,evaporated milk,dry milk,cream products,eggs
+
+  .yogurt { 
+    fill: #FFF7E4; 
+  }
+
+ .fluidmilk {
+    fill: #FFFFFF;
+  }
+  
+  .americancheese {
+    fill: #ECA800;
+  }
+  
+  
+  .italiancheese { 
+    fill: #F2E9C0 ; 
+  }
+
+  .miscellaneouscheese {
+    fill: #FFE253;
+  }
+  
+   .frozendairy {
+    fill: #F9A1CC;
+  }
+  
+   .evaporatedmilk {
+    fill: #DFDBCF;
+  }
+  
+   .drymilk {
+    fill: #FFF9E5;
+  }
+  
+   .creamproducts {
+    fill: #FFF9E5;
+  }
+  
+   .eggs {
+    fill: #A59B77;
+  }
+  
 }
