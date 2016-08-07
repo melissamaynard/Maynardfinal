@@ -244,10 +244,7 @@ text {
     fill: #191518;
   }
   
-  
-yogurt,fluid milk,american cheese,italian cheese,miscellaneous cheese,frozen dairy,evaporated milk,dry milk,cream products,eggs
-
-  .yogurt { 
+    .yogurt { 
     fill: #FFF7E4; 
   }
 
@@ -288,4 +285,51 @@ yogurt,fluid milk,american cheese,italian cheese,miscellaneous cheese,frozen dai
     fill: #A59B77;
   }
   
+  butter,margarine,lard,edible beef tallow,shortening,salad and cooking oils,other edible fats and oils,light cream,sour cream,cream cheese,eggnog
+
+   .butter {
+    fill: #FEF38B;
+  }
+  
+  .margarine {
+    fill: #FFFDE4;
+  }
+  
+  
+  .lard { 
+    fill: #FFFFFD; 
+  }
+
+  .ediblebeeftallow {
+    fill: #726950;
+  }
+  
+   .shortening {
+    fill: #FFE132;
+  }
+  
+   .saladandcookingoils {
+    fill: #726F50;
+  }
+  
+   .otherediblefatsandoils {
+    fill: #B3B097;
+  }
+  
+   .lightcream {
+    fill: #FFFAD0;
+  }
+  
+   .sourcream {
+    fill: #D7D7D6;
+  }
+
+   .creamcheese {
+    fill: #DAD5A3;
+  }
+  
+   .eggnog {
+    fill: #D2C76A;
+  }
+
 }
