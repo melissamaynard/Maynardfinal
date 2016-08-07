@@ -494,4 +494,43 @@ text {
    .turkey {
     fill: #FFDCBD;
   }
+
+  peanuts,almonds,hazelnuts,pecans,walnuts,macadamia,pistacios,othernuts,coconuts
+
+    .peanuts {
+    fill: #FFC46E;
+  }
+  
+   .almonds {
+    fill: #331F02;
+  }
+  
+   .hazelnuts {
+    fill: #804C00;
+  }
+
+    .pecans {
+    fill: #483821;
+  }
+
+   .walnuts {
+    fill: #A57F47;
+  }
+  
+   .macadamia {
+    fill: #C8B394;
+  }
+
+  .pistacios {
+    fill: #C8B394;
+  }
+  
+   .othernuts {
+    fill: #131411;
+  }
+  
+   .coconuts {
+    fill: #F1F1F1;
+  }
+
 }
