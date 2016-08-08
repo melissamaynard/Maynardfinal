@@ -176,4 +176,17 @@ d3.select('#nuts').on('click', function () {
 
 d3.select('#sugar').on('click', function () {
     stream.update('seafood');
+
+d3.select('#description').text(function(){
+        if (foodType === "veggies") {return "Veggies are great"}
+        else if (foodType=== "meat") {return "Meat is better"}
+        else if (foodType=== "dairy") {return "Dairy is awesome"}
+        else if (foodType=== "fruit") {return "Fruit is sweet"}
+        else if (foodType=== "grains") {return "Grains are gainful"}
+        else if (foodType=== "nuts") {return "Nuts are nutty"}
+        else if (foodType=== "seafood") {return "Seafood is fishy"}
+        else if (foodType=== "sugar") {return "Sugar is sweetest"}
+        else if (foodType=== "fats") {return "Fats  are fun"}        
+      })
+
 });
