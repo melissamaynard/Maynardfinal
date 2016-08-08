@@ -139,6 +139,7 @@ Stream.prototype.update = function (foodType) {
             .attr("dy", ".35em")
             .style("text-anchor", "end")
             .text(function (d) { return d; });
+
     });
 };
 
@@ -176,6 +177,9 @@ d3.select('#nuts').on('click', function () {
 
 d3.select('#sugar').on('click', function () {
     stream.update('seafood');
+
+d3.select('#description').text(function(){
+        if (foodType === "veggies") {return "Veggies are great"};
 
 d3.select('#description').text(function(){
         if (foodType === "veggies") {return "Veggies are great"}
