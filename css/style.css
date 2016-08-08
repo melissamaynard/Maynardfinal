@@ -10,7 +10,7 @@ body {
 #timeline {
   stroke: black;
   opacity: .3;
-  stroke-width: 20px;
+  stroke-width: 10px;
 }
 circle {
   fill: black;
