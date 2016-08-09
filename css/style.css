@@ -10,7 +10,7 @@ body {
 #timeline {
   stroke: black;
   opacity: .3;
-  stroke-width: 10px;
+  stroke-width: 20px;
 }
 circle {
   fill: black;
@@ -56,6 +56,7 @@ circle {
 .d20 {
   fill: #445577;
 }
+
 text {
   font: 10px sans-serif;
 }
@@ -147,35 +148,7 @@ text {
   padding: 20px;
 }
 
-@media (max-width:767px) {
-  #wrapper {
-    padding-right: 0;
-  }
-
-  #sidebar-wrapper {
-    right: 0;
-  }
-
-  #wrapper.active {
-    position: relative;
-    right: 325px;
-  }
-
-  #wrapper.active #sidebar-wrapper {
-    right: 325px;
-    width: 325px;
-    transition: all 0.4s ease 0s;
-  }
-
-  #menu-toggle {
-    display: inline-block;
-  }
-
-  .inset {
-    padding: 15px;
-  }
-
-  .escarole-romaine-and-leaf-lettuce {
+.escarole-romaine-and-leaf-lettuce {
     fill: #74c476;
   }
 
@@ -558,5 +531,35 @@ text {
    .honey {
     fill: #DA9F00;
   }
+  
+@media (max-width:767px) {
+  #wrapper {
+    padding-right: 0;
+  }
+
+  #sidebar-wrapper {
+    right: 0;
+  }
+
+  #wrapper.active {
+    position: relative;
+    right: 325px;
+  }
+
+  #wrapper.active #sidebar-wrapper {
+    right: 325px;
+    width: 325px;
+    transition: all 0.4s ease 0s;
+  }
+
+  #menu-toggle {
+    display: inline-block;
+  }
+
+  .inset {
+    padding: 15px;
+  }
+
+  
 
 }
