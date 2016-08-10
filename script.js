@@ -126,10 +126,12 @@ Stream.prototype.update = function (foodType) {
             });
 
         chart.legend.append("rect")
+            .attr("class", function (d) { return "streamPath " + d.name.replace(' ', '-'); })
             .attr("x", width - 10)
             .attr("width", 10)
             .attr("height", 10)
             .style("stroke", "grey");
+
 
         chart.legend.append("text")
             .attr("x", width - 12)
