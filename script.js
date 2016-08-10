@@ -63,6 +63,8 @@ Stream.prototype.update = function (foodType) {
     d3.csv("data/" + foodType + ".csv", function (error, data) {
         console.log("initial data: " + foodType, data);
 
+        chart.svg.selectAll("*").remove();
+
         var labelVar = 'year';
         //identifying year as the time element/categorical variable
         var varNames = d3.keys(data[0])
