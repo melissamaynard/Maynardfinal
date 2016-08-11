@@ -148,7 +148,7 @@ text {
   padding: 20px;
 }
 
-.escarole-romaine-and-leaf-lettuce {
+.lettuce {
     fill: #74c476;
   }
 
@@ -209,7 +209,7 @@ text {
     fill: #A7B38D;
   }
   
-   .dry-peas-and-lentils {
+   .dry-peas-&-lentils {
     fill: #647936;
   }
   
@@ -234,7 +234,7 @@ text {
     fill: #F2E9C0 ; 
   }
 
-  .miscellaneous-cheese {
+  .other-cheese {
     fill: #FFE253;
   }
   
@@ -512,11 +512,11 @@ text {
     fill: #645552;
   }
   
-   .cured-seafood {
+   .cured {
     fill: #FFFEFE;
   }
   
-    .cane-and-beet-sugar {
+    .sugar {
     fill: #FFFFFF;
   }
 
@@ -531,7 +531,7 @@ text {
    .honey {
     fill: #DA9F00;
   }
-  
+
 @media (max-width:767px) {
   #wrapper {
     padding-right: 0;

@@ -181,10 +181,6 @@ d3.select('#grains').on('click', function () {
     stream.update('grains');
 });
 
-d3.select('#fats').on('click', function () {
-    stream.update('fats');
-});
-
 d3.select('#nuts').on('click', function () {
     stream.update('nuts');
 });
