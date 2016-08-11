@@ -190,6 +190,10 @@ d3.select('#nuts').on('click', function () {
 });
 
 d3.select('#sugar').on('click', function () {
+    stream.update('sugar');
+});
+
+d3.select('#seafood').on('click', function () {
     stream.update('seafood');
 
 });
