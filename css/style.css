@@ -18,6 +18,9 @@ circle {
   stroke: white;
   stroke-width: 1px;
 }
+.tab1 { 
+  padding-left: 4em; 
+}
 .other {
   opacity: .8;
   fill: #998877;
@@ -209,7 +212,7 @@ text {
     fill: #A7B38D;
   }
   
-   .dry-peas-&-lentils {
+   .dry-peas-lentils {
     fill: #647936;
   }
   
@@ -504,7 +507,7 @@ text {
     fill: #F1F1F1;
   }
 
-   .fresh-and-frozen-seafood {
+   .fresh-and-frozen {
     fill: #F5987F;
   }
   
