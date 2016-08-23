@@ -124,7 +124,8 @@ Stream.prototype.update = function (foodType) {
           .enter().append("g")
             .attr("class", "legend")
             .attr("transform", function (d, i) {
-                var x = if(i % 2 === 0){  var x = }
+                var x = 700
+                if(i % 2 === 0){  var x = }
                         else if if(i % 2 === 1){  var x = ) 
                 var y = Math.ceil(i/2)*20
                 return "translate(" + x + "," + y + ")";  
