@@ -124,7 +124,10 @@ Stream.prototype.update = function (foodType) {
           .enter().append("g")
             .attr("class", "legend")
             .attr("transform", function (d, i) {
-              return "translate(55," + i * 20 + ")";
+                var x = if(i % 2 === 0){  var x = }
+                        else if if(i % 2 === 1){  var x = ) 
+                var y = Math.ceil(i/2)*20
+                return "translate(" + x + "," + y + ")";  
             });
 
         chart.legend.append("rect")
