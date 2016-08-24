@@ -124,10 +124,7 @@ Stream.prototype.update = function (foodType) {
           .enter().append("g")
             .attr("class", "legend")
             .attr("transform", function (d, i) {
-                if(i % 2 === 0){  var x = 10 }
-                else if(i % 2 === 1) (var x = 20) 
-                var y = Math.ceil(i/2)*20
-                return "translate(" + x + "," + y + ")";  
+                return "translate(55," + i * 20 + ")";  
             });
 
         chart.legend.append("rect")
@@ -149,11 +146,10 @@ Stream.prototype.update = function (foodType) {
         if (foodType === "veggies") {return "Average daily consumption of vegetables increased from 1.5 cups per person to 1.7 cups per person between 1970 to 2013, following a similar increase in total food consumption. In particular, Americans are consuming more green vegetables, including lettuce, spinach, kale, broccoli, collard greens, and mustard greens. Potatoes maintained their status at America’s most popular vegetable throughout this period, with the average person consuming almost ¾ a cup daily at their peak in 1970 in comparison to about ½ cup in 2013."}
         else if (foodType=== "meat") {return "The average American consumed about an ounce less of beef every day in 2013 than they did in 1970, while consuming about an ounce more of chicken. Total meat consumption was relatively steady during this period, however. "}
         else if (foodType=== "dairy") {return "Average daily consumption of dairy increased from 1.6 cups per person to 1.78 cups per person from 1970 to 2013, following a similar increase in total food consumption. Americans are consuming far more cheese and yogurt than they used to, while fluid milk consumption has fallen significantly, from .95 cups in 1970 to .63 cups in 2013."}
-        else if (foodType=== "fruit") {return "Total fruit consumption remained relatively steady between 1970 and 2013, beginning and ending the time period at .9 cups per person per day, with only minor fluctuations in between. Fruit juice comprised almost a third of all fruit consumption. The most popular raw fruits were apples and bananas, which maintained their popularity throughout this time period."}
-        else if (foodType=== "nuts") {return "Nuts are nutty"}
-        else if (foodType=== "seafood") {return "Seafood is fishy"}
-        else if (foodType=== "sugar") {return "Sugar is sweetest"}
-        else if (foodType=== "fats") {return "Fats  are fun"}        
+        else if (foodType=== "fruit") {return "Total fruit consumption remained relatively steady between 1970 and 2013, beginning and ending the time period at .9 cups per person per day, with only minor fluctuations in between. Fruit juice comprised almost a third of all fruit consumption. Peanuts (including peanut butter) represent more than half of all nuts consumed, though almonds have surged in popularity since 2005."}
+        else if (foodType=== "seafood") {return "The average American consumed slightly more seafood in 2013 (.38 ounces) than in 1970 (.33 ounces), driven  by an increase in the consumption of fresh seafood."}
+        else if (foodType=== "sugar") {return "The American Heart Association recommends that men limit sugar consumption to 9 teaspoons per day and women limit sugar consumption to 6 teaspoons per day. The average American consumed more than double the recommended amount of sugar in 2013 (22.4 teaspoons), however, with corn-based sugars such has high-fructose corn syrups surging in popularity since 1970. Total sugar consumption has tapered off slightly since its peak of 26.4 teaspoons per capita in 1999."}
+              
       })
 
     });
