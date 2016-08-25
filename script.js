@@ -1,6 +1,6 @@
-var margin = { top: 20, right: 55, bottom: 30, left: 100 },
-    width  = 1400 - margin.left - margin.right,
-    height = 500  - margin.top  - margin.bottom;
+var margin = { top: 20, right: 80, bottom: 30, left: 100 },
+    width  = 1500 - margin.left - margin.right,
+    height = 650  - margin.top  - margin.bottom;
 
 var labels = {
     veggies: 'Daily average consumption of vegetables in cups',
@@ -124,10 +124,7 @@ Stream.prototype.update = function (foodType) {
           .enter().append("g")
             .attr("class", "legend")
             .attr("transform", function (d, i) {
-                if(i % 2 === 0)( var x = 10 )
-                else if(i % 2 === 1) (var x = 20) 
-                var y = Math.ceil(i/2)*20
-                return "translate(" + x + "," + y + ")";  
+                return "translate(55," + i * 20 + ")";  
             });
 
         chart.legend.append("rect")
